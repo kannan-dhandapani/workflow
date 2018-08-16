@@ -1,0 +1,25 @@
+<br>
+
+<h3>Create State</h3><br><br><br>
+
+<%= form_for(@st) do |f| %>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter name" %>
+  </div><br>
+  <div class="form-group">
+    <%= f.text_area :desc, class: "form-control", placeholder: "Enter description", rows: "4" %>
+  </div><br>
+  <div class="form buttons">
+    <%= f.submit "Create", class: "btn btn-primary"%>
+  </div>
+  </div>
+  <div class="col-md-3">
+  </div>
+<% end %>
+<br><br><br><br> 
+<br><br><br><br> 
+<br><br><br><br> 
+<br><br><br><br>

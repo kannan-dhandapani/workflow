@@ -1,0 +1,2 @@
+module WorkflowTemplatesHelper
+end

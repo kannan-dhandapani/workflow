@@ -1,0 +1,24 @@
+
+    <br><h3>List of Workflows</h3><br>
+    
+    <table class="table table-hover" summary="WorkflowTemplate list">
+        <thead>
+            <tr>
+                <th scope="col"><h4>Name</h4></th>
+                <th scope="col"><h4>Action</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @workflows.each do |workflow| %>
+            <tr>
+                <td><h5><%= workflow.name %></h5></td>
+                <td>
+                    <%= link_to("Show", workflow_template_path(workflow)) %>
+                    <%= link_to("Edit", {:controller => "workflow_templates", :action => "edit", :id => "#{workflow.id}" }) %>
+                    <%= link_to("Delete", delete_workflow_template_path(workflow)) %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+

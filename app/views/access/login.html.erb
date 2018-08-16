@@ -1,0 +1,26 @@
+<% page_title = "login" %>
+
+<%= form_tag( access_attempt_login_path, :method => :post ) do %>
+  
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= text_field_tag :uname, params[:uname], placeholder: "Username", class: "form-control" %>
+      </div><br>
+
+      <div class="form-group">
+        <%= password_field_tag :upwd, params[:upwd], placeholder: "Password", class: "form-control" %>
+      </div><br>
+
+      <div class="form buttons">
+        <%= submit_tag "Log In", class: "btn btn-primary" %>
+      </div><br>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+  </div>
+<% end %>

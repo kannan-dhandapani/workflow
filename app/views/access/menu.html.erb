@@ -1,0 +1,22 @@
+<% page_title = "menu" %>
+
+<%= form_tag( access_login_path, :method => :get ) do %>
+  
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+
+    <div class="col-md-4">
+      <div class="jumbotron">
+        <h3>Workflow system</h3><br>
+      
+        <div class="form buttons">
+            <%= submit_tag "Login", class: "btn btn-primary" %>
+        </div><br>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+    </div>
+  </div>
+<% end %>

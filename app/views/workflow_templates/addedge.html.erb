@@ -1,0 +1,45 @@
+
+<br><h3>Add Transition</h3><br>
+
+<%= form_tag( :action => 'addedge', :wid => "#{@wf.id}", :method => "GET" ) do %>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= text_field_tag :vname, params[:vname], placeholder: "Name", class: "form-control" %>
+      </div><br>
+
+      <div class="form-group">  
+        <!--%= text_field_tag :vfrom, params[:vfrom], placeholder: "From", class: "form-control" %-->
+        <%= select_tag "vfrom", options_from_collection_for_select(State.order("name ASC"), :name, :name), prompt: "From", class: "form-control" %>
+      </div><br>
+    
+      <div class="form-group">
+        <!--%= text_field_tag :vto, params[:vto], placeholder: "To", class: "form-control" %-->
+        <%= select_tag "vto", options_from_collection_for_select(State.order("name ASC"), :name, :name), prompt: "To", class: "form-control" %>
+      </div><br>
+
+      <div class="form-group">
+        <%= text_area_tag :vdesc, params[:vdesc], placeholder: "Description", class: "form-control", rows: "4" %>
+      </div><br>
+
+      <div class="form-group" id="additem">
+      </div><br>
+
+      <div class="form buttons">
+        <input type="button" value="+", id="addattr", class="btn btn-primary">
+        <%= submit_tag "Add", class: "btn btn-primary" %>
+      </div><br>
+    </div> 
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+        <% if @from != nil && @to != nil %>
+          <%= image_tag('graph.jpg', class:"img-fluid", alt:"workflow image") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+       
+<% end %>

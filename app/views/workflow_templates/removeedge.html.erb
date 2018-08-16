@@ -1,0 +1,28 @@
+<br><h3>Remove Transition</h3><br>
+
+<%= form_tag( :action => 'removeedge', :wid => "#{@wid}", :method => "GET" ) do %>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">  
+        <%= text_field_tag :vfrom, params[:vfrom], placeholder: "From", class: "form-control" %>
+      </div><br>
+    
+      <div class="form-group">
+        <%= text_field_tag :vto, params[:vto], placeholder: "To", class: "form-control" %>
+      </div><br>
+
+      <div class="form buttons">
+        <%= submit_tag "Remove", class: "btn btn-primary" %>
+      </div><br>
+    </div> 
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-5">
+      <div class="form-group">
+        <%= image_tag('graph.jpg', class:"img-fluid", alt:"workflow image") %>
+      </div>
+    </div>
+  </div>
+       
+<% end %>

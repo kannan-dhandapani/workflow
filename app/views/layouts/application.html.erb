@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Workflow" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Workflow" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <script src="/jquery-3.3.1.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
+    <script src="/custom.js"></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render partial: "layouts/navbar" %>
+    </header>
+
+    <% if !flash[:notice].blank? %>
+      <div class = "jumbotron">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render partial: "layouts/footer" %>
+  </body>
+</html>
