@@ -3,6 +3,8 @@ require 'rgl/dot'
 require 'fileutils'
 
 class WorkflowTemplatesController < ApplicationController
+
+  before_action :confirm_logged_in
   
   @workflow_name
   
@@ -103,6 +105,11 @@ class WorkflowTemplatesController < ApplicationController
     @to = params[:vto]
     @trname = params[:vname]
     @trdesc = params[:vdesc]
+    @key1 = params[:key1]
+    @value1 = params[:value1]
+    @key2 = params[:key2]
+    @value2 = params[:value2]
+
     if @dg == nil
       @dg = RGL::DirectedAdjacencyGraph[];
     end
@@ -136,7 +143,25 @@ class WorkflowTemplatesController < ApplicationController
         @tr = Transition.new(workflow_id: "#{@wf.id}", name: "#{@trname}", from_state_id: "#{@fst.id}", to_state_id: "#{@tst.id}", desc: "#{@trdesc}")
         @tr.save
       rescue
-        puts "DB query failed."
+        puts "DB query failed for tr."
+      end
+
+      begin
+        if @key1 != nil && @value1 != nil
+          @cr1 = Criterium.new(transition_id: "#{@tr.id}", criteria_type: 0, key: "#{@key1}", value: "#{@value1}")
+          @cr1.save
+        end
+      rescue
+        puts "DB query failed for cr-a."
+      end
+
+      begin
+        if @key2 != nil && @value2 != nil
+          @cr2 = Criterium.new(transition_id: "#{@tr.id}", criteria_type: 0, key: "#{@key2}", value: "#{@value2}")
+          @cr2.save
+        end
+      rescue
+        puts "DB query failed for cr-b."
       end
     end
   end

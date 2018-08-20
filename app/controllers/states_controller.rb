@@ -1,4 +1,7 @@
 class StatesController < ApplicationController
+
+  before_action :confirm_logged_in
+  
   def new
     @st = State.new()
   end

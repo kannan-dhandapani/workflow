@@ -1,3 +1,3 @@
 class Criterium < ApplicationRecord
-  belongs_to :transitions
+  belongs_to :transition
 end

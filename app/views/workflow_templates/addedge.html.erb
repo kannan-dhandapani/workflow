@@ -23,11 +23,19 @@
         <%= text_area_tag :vdesc, params[:vdesc], placeholder: "Description", class: "form-control", rows: "4" %>
       </div><br>
 
-      <div class="form-group" id="additem">
+      <!--div class="form-group" id="additem">
+      </div><br-->
+
+      <div class="form-group">
+        <%= text_field_tag :key1, params[:key1], placeholder: "Key", class: "form-control" %>
+        <%= text_field_tag :value1, params[:value1], placeholder: "Value", class: "form-control" %><br>
+
+        <%= text_field_tag :key2, params[:key2], placeholder: "Key", class: "form-control" %>
+        <%= text_field_tag :value2, params[:value2], placeholder: "Value", class: "form-control" %>
       </div><br>
 
       <div class="form buttons">
-        <input type="button" value="+", id="addattr", class="btn btn-primary">
+        <!--input type="button" value="+", id="addattr", class="btn btn-primary"-->
         <%= submit_tag "Add", class: "btn btn-primary" %>
       </div><br>
     </div> 

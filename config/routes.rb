@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  
   root 'workflow_templates#index'
   get 'access/menu'
   get 'access/login'
@@ -13,7 +16,7 @@ Rails.application.routes.draw do
   get 'state/delete'
   post 'access/attempt_login'
   get 'access/logout'
-  get 'admin', :to => 'access#menu'
+  get 'home', :to => 'access#home'
   #get 'workflow_templates/index'
   #get 'workflow_templates/show'
   #get 'workflow_templates/new'

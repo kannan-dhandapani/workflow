@@ -1,44 +1,16 @@
 digraph RGL__DirectedAdjacencyGraph {
-    "" [
+    "bay of bengal" [
         color = red,
         fillcolor = yellow,
         fontsize = 8,
-        label = ""
+        label = "bay of bengal"
     ]
 
-    ",DN,d" [
+    clutch [
         color = red,
         fillcolor = yellow,
         fontsize = 8,
-        label = ",DN,d"
-    ]
-
-    ",D" [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = ",D"
-    ]
-
-    215 [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = 215
-    ]
-
-    anyname [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = anyname
-    ]
-
-    active [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = active
+        label = clutch
     ]
 
     asklkfa [
@@ -48,32 +20,25 @@ digraph RGL__DirectedAdjacencyGraph {
         label = asklkfa
     ]
 
+    "" [
+        color = red,
+        fillcolor = yellow,
+        fontsize = 8,
+        label = ""
+    ]
+
+    bullet [
+        color = red,
+        fillcolor = yellow,
+        fontsize = 8,
+        label = bullet
+    ]
+
     asn [
         color = red,
         fillcolor = yellow,
         fontsize = 8,
         label = asn
-    ]
-
-    "bay of bengal" [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = "bay of bengal"
-    ]
-
-    191 [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = 191
-    ]
-
-    "asllsalaa;s" [
-        color = red,
-        fillcolor = yellow,
-        fontsize = 8,
-        label = "asllsalaa;s"
     ]
 
     blue [
@@ -83,71 +48,27 @@ digraph RGL__DirectedAdjacencyGraph {
         label = blue
     ]
 
+    "bay of bengal" -> clutch [
+        fontsize = 8
+    ]
+
+    "bay of bengal" -> blue [
+        fontsize = 8
+    ]
+
+    asklkfa -> "bay of bengal" [
+        fontsize = 8
+    ]
+
+    asklkfa -> bullet [
+        fontsize = 8
+    ]
+
     "" -> "" [
         fontsize = 8
     ]
 
-    ",DN,d" -> ",D" [
-        fontsize = 8
-    ]
-
-    ",DN,d" -> 215 [
-        fontsize = 8
-    ]
-
-    ",DN,d" -> "bay of bengal" [
-        fontsize = 8
-    ]
-
-    215 -> active [
-        fontsize = 8
-    ]
-
-    anyname -> active [
-        fontsize = 8
-    ]
-
-    anyname -> asklkfa [
-        fontsize = 8
-    ]
-
-    anyname -> asn [
-        fontsize = 8
-    ]
-
-    active -> "bay of bengal" [
-        fontsize = 8
-    ]
-
-    active -> anyname [
-        fontsize = 8
-    ]
-
-    asklkfa -> anyname [
-        fontsize = 8
-    ]
-
-    asklkfa -> asn [
-        fontsize = 8
-    ]
-
-    asklkfa -> blue [
-        fontsize = 8
-    ]
-
     asn -> "bay of bengal" [
-        fontsize = 8
-    ]
-
-    191 -> 215 [
-        fontsize = 8
-    ]
-
-    191 -> "asllsalaa;s" [
-        fontsize = 8
-    ]
-
-    191 -> asklkfa [
         fontsize = 8
     ]
 }

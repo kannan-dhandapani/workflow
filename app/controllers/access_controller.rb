@@ -1,5 +1,8 @@
 class AccessController < ApplicationController
-  def menu
+
+  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout, :home]
+
+  def home
   end
 
   def login
@@ -17,6 +20,8 @@ class AccessController < ApplicationController
       session[:user_id] = authorized_user.id
       puts "Login successfully"
       flash[:notice] = "Welcome #{authorized_user.last_name}, #{authorized_user.first_name}!"
+      #UserMailer.welcome_email.deliver_later
+      MailWorker.perform_async(authorized_user)
       redirect_to(workflow_templates_path)
     else
       puts "incorrect username/password."
@@ -29,6 +34,6 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     puts "logged out successfully."
     flash[:notice] = "Logged out!"
-    redirect_to(admin_path)
+    redirect_to(home_path)
   end
 end
